@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
-import general from '../../styles/general';
+import { useNavigation } from '@react-navigation/native'
+import general from '../../styles/general.js';
 import styles from './style';
 
 export default function SignUp() {
 
-  const [nome, setNome]       = useState('');
+  const [nome, setNome]         = useState('');
+  const [email, setEmail]       = useState('');
   const [password, setPassword] = useState('');
 
  return (
 
   <View style={[general.containerCenter, general.background]}>
-    <Image source={require('../../assets/Logo.png')} style={styles.image}/>
 
     <View style={general.alignH}>
       <TextInput
@@ -45,7 +46,7 @@ export default function SignUp() {
       />
 
       <TouchableOpacity style={general.button}>
-        <Text style={general.btnText}>Acessar</Text>
+        <Text style={general.btnText}>Cadastrar</Text>
       </TouchableOpacity>
     </View>
   </View>

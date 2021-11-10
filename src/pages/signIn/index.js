@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
+import { useNavigation } from '@react-navigation/native'
 import general from '../../styles/general';
 import styles from './style';
+import SignUp from '../signup';
 
 export default function SignIn() {
+
+  const navigation = useNavigation();
 
   const [email, setEmail]       = useState('');
   const [password, setPassword] = useState('');
@@ -37,7 +41,7 @@ export default function SignIn() {
       <TouchableOpacity style={general.button}>
         <Text style={general.btnText}>Acessar</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={ () => navigation.navigate(SignUp) }>
         <Text style={styles.textLink}>Criar uma conta!</Text>
       </TouchableOpacity>
     </View>
