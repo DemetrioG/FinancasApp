@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
+import { AuthContext } from '../../contexts/auth';
 import general from '../../styles/general';
 import styles from './style';
 import SignUp from '../signup';
@@ -11,6 +12,11 @@ export default function SignIn() {
 
   const [email, setEmail]       = useState('');
   const [password, setPassword] = useState('');
+  const { user } = useContext(AuthContext);
+
+  function handleLogin() {
+    console.log(user)
+  }
 
  return (
 
@@ -38,7 +44,7 @@ export default function SignIn() {
         onChangeText={ (v) => setPassword(v) }
       />
 
-      <TouchableOpacity style={general.button}>
+      <TouchableOpacity style={general.button} onPress={handleLogin}>
         <Text style={general.btnText}>Acessar</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={ () => navigation.navigate(SignUp) }>

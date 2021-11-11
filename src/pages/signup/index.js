@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
 import general from '../../styles/general.js';
 import styles from './style';
+import { AuthContext } from '../../contexts/auth.js';
 
 export default function SignUp() {
 
   const [nome, setNome]         = useState('');
   const [email, setEmail]       = useState('');
   const [password, setPassword] = useState('');
+  const { user } = useContext(AuthContext);
+  console.log(user);
 
  return (
 
