@@ -1,17 +1,21 @@
 import React, { useState, useContext } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import AuthProvider, { AuthContext } from '../../contexts/auth.js';
 import general from '../../styles/general.js';
 import styles from './style';
-import { AuthContext } from '../../contexts/auth.js';
 
 export default function SignUp() {
 
-  const [nome, setNome]         = useState('');
+  const [name, setName]         = useState('');
   const [email, setEmail]       = useState('');
   const [password, setPassword] = useState('');
-  const { user } = useContext(AuthContext);
-  console.log(user);
+
+  const { signUp } = useContext(AuthContext);
+
+  function handleSignUp() {
+    signUp(email, password, name);
+  }
 
  return (
 
@@ -24,8 +28,8 @@ export default function SignUp() {
         autoCorrect={false} //Sem corretor de teclado
         autoCapitalize="none" //Sem primeira letra maiúscula
         style={general.input}
-        value={nome}
-        onChangeText={ (v) => setNome(v) }
+        value={name}
+        onChangeText={ (v) => setName(v) }
       />
 
       <TextInput
@@ -48,7 +52,7 @@ export default function SignUp() {
         onChangeText={ (v) => setPassword(v) }
       />
 
-      <TouchableOpacity style={general.button}>
+      <TouchableOpacity style={general.button} onPress={handleSignUp}>
         <Text style={general.btnText}>Cadastrar</Text>
       </TouchableOpacity>
     </View>

@@ -5,7 +5,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import firebase from './src/services/firebaseConnection';
 import AuthProvider from './src/contexts/auth';
 
-import Routes from './src/routes'
+import Routes from './src/routes';
+
+console.disableYellowBox = true;
 
 export default function App() {
   return (
