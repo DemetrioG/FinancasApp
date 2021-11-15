@@ -44,7 +44,7 @@ export default function SignIn() {
         onChangeText={ (v) => setPassword(v) }
       />
 
-      <TouchableOpacity style={general.button} onPress={handleLogin}>
+      <TouchableOpacity style={general.buttonGreen} onPress={handleLogin}>
         <Text style={general.btnText}>Acessar</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={ () => navigation.navigate(SignUp) }>

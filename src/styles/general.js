@@ -2,7 +2,9 @@ import { StyleSheet } from 'react-native';
 
 const general = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        padding: 20,
+        paddingBottom: 0
     },
 
     alignH: {
@@ -30,8 +32,17 @@ const general = StyleSheet.create({
         borderRadius: 6,
     },
 
-    button: {
+    buttonGreen: {
         backgroundColor: '#00b94a',
+        justifyContent: 'center',
+        width: 320,
+        height: 50,
+        borderRadius: 6,
+        marginBottom: 10,
+    },
+
+    buttonRed: {
+        backgroundColor: '#c62c36',
         justifyContent: 'center',
         width: 320,
         height: 50,
