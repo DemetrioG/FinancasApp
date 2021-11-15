@@ -23,7 +23,7 @@ export default function Home() {
     <View style={[general.background, general.container]}>
       <Header/>
       <View>
-        <Text style={styles.nameTxt}>Nome</Text>
+        <Text style={styles.nameTxt}>{user && user.nome}</Text>
         <Text style={styles.saldoTxt}>R$5.000,00</Text>
       </View>
 

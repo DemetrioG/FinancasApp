@@ -18,3 +18,6 @@ Bibliotecas utilizadas:
 * Icons
     - npm install react-native-vector-icons
 
+* Date Format
+    - npm install date-fns
+
