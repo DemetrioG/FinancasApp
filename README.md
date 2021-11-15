@@ -10,3 +10,6 @@ Bibliotecas utilizadas:
 
 * Firebase
     - npm install firebase@8.8.1
+
+* Async Storage
+    - expo install @react-native-async-storage/async-storage
