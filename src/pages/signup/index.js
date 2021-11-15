@@ -52,7 +52,7 @@ export default function SignUp() {
         onChangeText={ (v) => setPassword(v) }
       />
 
-      <TouchableOpacity style={general.button} onPress={handleSignUp}>
+      <TouchableOpacity style={general.buttonGreen} onPress={handleSignUp}>
         <Text style={general.btnText}>Cadastrar</Text>
       </TouchableOpacity>
     </View>
