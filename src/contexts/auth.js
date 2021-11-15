@@ -8,6 +8,7 @@ function AuthProvider({children}) {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [loadingAuth, setLoadingAuth] = useState(false);
 
     //Verificação se há usuário salvo no AsyncStorage, para cair direto na Home
     useEffect(() => {
@@ -25,6 +26,7 @@ function AuthProvider({children}) {
 
     //Login do usuário
     async function signIn(email, password) {
+        setLoadingAuth(true);
         await firebase.auth().signInWithEmailAndPassword(email, password)
         .then(async (v) => {
             let uid = v.user.uid;
@@ -38,15 +40,18 @@ function AuthProvider({children}) {
                 
                 setUser(data);
                 storageUser(data);
+                setLoadingAuth(false);
             })
         })
         .catch((error) => {
             alert(error.code);
+            setLoadingAuth(false);
         })
     }
 
     //Cadastro do usuário
     async function signUp(email, password, name) {
+        setLoadingAuth(true);
         await firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(async (v) => {
             let uid = v.user.uid;
@@ -62,10 +67,12 @@ function AuthProvider({children}) {
                 };
                 setUser(data);
                 storageUser(data);
+                setLoadingAuth(false);
             })
         })
         .catch((error) => {
             alert(error.code);
+            setLoadingAuth(false);
         })
     }
 
@@ -83,7 +90,7 @@ function AuthProvider({children}) {
 
     return (
         // !! passa o retorno da state para bool
-        <AuthContext.Provider value={{ signed: !!user , user, loading, signUp, signIn, signOut }}>
+        <AuthContext.Provider value={{ signed: !!user , user, loading, loadingAuth, signUp, signIn, signOut }}>
             {children}
         </AuthContext.Provider>
     );

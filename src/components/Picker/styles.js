@@ -1,7 +1,9 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-
+    paddingPicker: {
+        padding: 0,
+    },
 })
 
 
