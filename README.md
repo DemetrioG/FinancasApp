@@ -21,3 +21,7 @@ Bibliotecas utilizadas:
 * Date Format
     - npm install date-fns
 
+* SafeAreaView
+    - expo install react-native-safe-area-context
+
+

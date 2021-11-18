@@ -5,12 +5,14 @@ import general from "../styles/general";
 import Home from "../pages/Home";
 import Profile from "../pages/Profile";
 import Register from "../pages/Register";
+import CustomDrawer from "../components/CustomDrawer";
 
 const AppDrawer = createDrawerNavigator();
 
 function AppRoutes() {
     return(
         <AppDrawer.Navigator
+            drawerContent={ (props) => <CustomDrawer {...props}/>}
             drawerStyle={general.background}
             drawerContentOptions={{
                 labelStyle: {

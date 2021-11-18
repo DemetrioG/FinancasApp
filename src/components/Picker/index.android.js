@@ -10,7 +10,9 @@ export default function Picker({ onChange, type }) {
 
             <RNPickerSelect
                 style={{
-
+                    inputAndroid: {
+                        color: '#d1d1d1',
+                    }
                 }}
                 placeholder={{
                     label: 'Selecione o tipo',
@@ -20,8 +22,8 @@ export default function Picker({ onChange, type }) {
                 value={type}
                 onValueChange={(v) => onChange(v) }
                 items={[
-                    {label: 'Receita', value: 'receita', inputLabel: '#d1d1d1'},
-                    {label: 'Despesa', value: 'despesa', inputLabel: '#d1d1d1'}
+                    {label: 'Receita', value: 'receita'},
+                    {label: 'Despesa', value: 'despesa'}
                 ]}
             />
         </View>

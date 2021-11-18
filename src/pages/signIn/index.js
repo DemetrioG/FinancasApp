@@ -47,6 +47,7 @@ export default function SignIn() {
               style={general.input}
               value={password}
               onChangeText={ (v) => setPassword(v) }
+              secureTextEntry={true}
             />
 
             <TouchableOpacity style={general.buttonGreen} onPress={handleLogin}>
