@@ -24,4 +24,7 @@ Bibliotecas utilizadas:
 * SafeAreaView
     - expo install react-native-safe-area-context
 
+* Date Time Picker
+    - yarn add @react-native-community/datetimepicker
+
 

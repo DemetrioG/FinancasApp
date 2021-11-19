@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     lastInfo: {
         color: '#00b94a',
         marginBottom: 10,
+        marginLeft: 5
     },
 
     list: {

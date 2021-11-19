@@ -11,6 +11,10 @@ const general = StyleSheet.create({
         alignItems: 'center',
     },
 
+    flexRow: {
+        flexDirection: 'row',
+    },
+
     containerCenter: {
         flex: 1,
         alignItems: 'center',
