@@ -23,7 +23,7 @@ export default function Picker({ onChange, type }) {
                     value: null,
                 }}
                 value={type}
-                onValueChange={(v) = onChange(v) }
+                onValueChange={(v) => onChange(v) }
                 items={[
                     {label: 'Receita', value: 'receita'},
                     {label: 'Despesa', value: 'despesa'}
