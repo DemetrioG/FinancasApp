@@ -59,7 +59,7 @@ export default function SignIn() {
                 )
               }
             </TouchableOpacity>
-            <TouchableOpacity onPress={ () => navigation.navigate(SignUp) }>
+            <TouchableOpacity onPress={ () => navigation.navigate('SignUp') }>
               <Text style={styles.textLink}>Criar uma conta!</Text>
             </TouchableOpacity>
           </View>
